@@ -3,78 +3,12 @@ Protocol
 
 A guide for getting things done.
 
-Set up laptop
--------------
-
-Install the latest version of Xcode from the App Store.
-
-Set up your laptop with [this script](https://github.com/thoughtbot/laptop)
-and [these dotfiles](https://github.com/thoughtbot/dotfiles).
-
-Create Rails app
-----------------
-
-Get Suspenders.
-
-    gem install suspenders
-
-Create the app.
-
-    suspenders app --heroku true --github organization/app
-
-Create iOS app
---------------
-
-Create a new project in Xcode with these settings:
-
-* Check 'Create local git repository for this project'.
-* Check 'Use Automatic Reference Counting'.
-* Set an appropriate 2 or 3 letter class prefix.
-* Set the Base SDK to 'Latest iOS'.
-* Set the iOS Deployment Target to 6.0.
-* Use the Apple LLVM compiler.
-
-Get liftoff.
-
-    gem install liftoff
-
-Run liftoff in the project directory.
-
-    liftoff
-
-Set up Rails app
-----------------
-
-Get the code.
-
-    git clone git@github.com:organization/app.git
-
-Set up the app's dependencies.
-
-    cd project
-    ./bin/setup
-
-Use [Heroku config](https://github.com/ddollar/heroku-config) to get `ENV`
-variables.
-
-    heroku config:pull -r staging
-
-Delete extra lines in `.env`, leaving only those needed for app to function
-properly. For example: `BRAINTREE_MERCHANT_ID` and `S3_SECRET`.
-
-Use [Foreman](http://goo.gl/oy4uw) to run the app locally.
-
-    foreman start
-
-It uses your `.env` file and `Procfile` to run processes just like Heroku's
-[Cedar](https://devcenter.heroku.com/articles/cedar/) stack.
-
 Write a feature
 ---------------
 
-Create a local feature branch based off master.
+Create a local branch based off dev.
 
-    git checkout master
+    git checkout dev
     git pull --rebase
     git checkout -b your-initials-new-feature
 
@@ -105,8 +39,6 @@ Share your branch.
     git push origin [branch]
 
 Submit a [Github pull request](http://goo.gl/Kmdee).
-
-Ask for a code review in [Campfire](http://campfirenow.com).
 
 Review code
 -----------
